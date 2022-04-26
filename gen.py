@@ -77,8 +77,9 @@ def do_request(url):
     global bad_requests
 
     debug_print("  Requesting page...".format(url))
-
-    headers = {'user-agent': config.USER_AGENT}
+    
+    user_agent = random.choice(config.USER_AGENT)
+    headers = {'user-agent': user_agent}
 
     try:
         r = requests.get(url, headers=headers, timeout=5)
